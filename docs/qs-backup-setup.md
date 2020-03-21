@@ -112,9 +112,26 @@ For our purpose, **git** will be our mean to:
 #### Installing & Setting up Git with GitHub
 
 1. Create a [GitHub account](https://github.com/join/)
-2. [Follow this guide](https://vladmihalcea.com/tutorials/git/windows-git-ssh-authentication-to-github/) to:
-  - Install Git
-  - Setup a SSH key that automatically authenticate your Git installation with your GitHub account
+
+2. Download [Git for Windows](https://gitforwindows.org/)
+
+3. The only settings to consider changing are:
+
+   ​    **Check daily for updates** (not completely neccesary but could prevent future incompatability issues)
+<img src="/content/images/backup-setup/gitsetup-checkupdates.png" data-origin="content/images/backup-setup/gitsetup-checkupdates.png" alt="">
+
+​    **Enable symbolic links** (neccessary if you want to use git to back up plan and sleep chart data)<img src="/content/images/backup-setup/gitsetup-symlinks.png" data-origin="content/images/backup-setup/gitsetup-symlinks.png" alt="">
+
+Aside from that, everything else can be ignored
+
+4. Download and install the latest [Git Credential Manager for Windows](https://github.com/Microsoft/Git-Credential-Manager-for-Windows/releases/latest) (there are no settings that need configured)
+
+5. Open command prompt (Win+X: Command Prompt) and run the following two commands (with your own name and email):
+
+   ```lang-vb
+   git config --global user.name "Piotr Wozniak"
+   git config --global user.email woz@supermemo.org
+   ```
   
 #### Creating & Synchronizing your GitHub repository
 
