@@ -111,27 +111,28 @@ For our purpose, **git** will be our mean to:
 
 #### Installing & Setting up Git with GitHub
 
+!> If you want to use SSH authentication instead of HTTPS, follow [this guide](https://vladmihalcea.com/tutorials/git/windows-git-ssh-authentication-to-github/)
+
 1. Create a [GitHub account](https://github.com/join/)
 
 2. Download [Git for Windows](https://gitforwindows.org/)
 
 3. The only settings to consider changing are:
 
-   ​    **Check daily for updates** (not completely neccesary but could prevent future incompatability issues)
+**Check daily for updates** (not completely neccesary but could prevent future incompatability issues)
 <img src="/content/images/backup-setup/gitsetup-checkupdates.png" data-origin="content/images/backup-setup/gitsetup-checkupdates.png" alt="">
 
-​    **Enable symbolic links** (neccessary if you want to use git to back up plan and sleep chart data)<img src="/content/images/backup-setup/gitsetup-symlinks.png" data-origin="content/images/backup-setup/gitsetup-symlinks.png" alt="">
+**Enable symbolic links** (neccessary if you want to use git to back up plan and sleep chart data)<img src="/content/images/backup-setup/gitsetup-symlinks.png" data-origin="content/images/backup-setup/gitsetup-symlinks.png" alt="">
 
 Aside from that, everything else can be ignored
 
-4. Download and install the latest [Git Credential Manager for Windows](https://github.com/Microsoft/Git-Credential-Manager-for-Windows/releases/latest) (there are no settings that need configured)
+5. Open **command prompt** (windows search cmd and press enter) and run the following two commands (with your own name and email):
 
-5. Open command prompt (Win+X: Command Prompt) and run the following two commands (with your own name and email):
-
-   ```lang-vb
+   ```
    git config --global user.name "Piotr Wozniak"
    git config --global user.email woz@supermemo.org
    ```
+   Setup is now complete!
   
 #### Creating & Synchronizing your GitHub repository
 
@@ -144,12 +145,21 @@ Aside from that, everything else can be ignored
 
 <img src="/content/images/backup-setup/windows-explorer-cmd.png" data-origin="content/images/backup-setup/windows-explorer-cmd.png" alt="">
 
-3. Go to your **GitHub repository** web page, click the <kbd>**Clone or download**</kbd> button, and copy the link.
+3. Go to your **GitHub repository** web page, click the <kbd>**Clone or download**</kbd> button, and **press use HTTPS**.
 
 <img src="/content/images/backup-setup/github-clone-link.png" data-origin="content/images/backup-setup/github-clone-link.png" alt="">
 
-4. In the **command prompt**, type `git clone <git@github.com:......>`. Replace the text between **< >** with the link you copied from GitHub.
-5. Your repository is now synchronized with your computer. Copy your SuperMemo collection in the new folder. Your folder should look similar to the example below (*.gitignore* might be missing):
+4. Copy the link starting with https://
+
+<img src="/content/images/backup-setup/gitsetup-clonehttps.png" data-origin="content/images/backup-setup/gitsetup-clonehttps.png" alt="">
+
+5. In the **command prompt**, type `git clone <https://github.com/......>`. Replace the text between **< >** with the link you copied from GitHub.
+
+6. You'll be prompted to login to github. Login with the github credentials from the account you created earlier. 
+
+<img src="/content/images/backup-setup/gitsetup-login.png" data-origin="content/images/backup-setup/gitsetup-login.png" alt="">
+
+8. Your repository is now synchronized with your computer. Copy your SuperMemo collection in the new folder. Your folder should look similar to the example below (*.gitignore* might be missing):
 
 <img src="/content/images/backup-setup/git-local-collection-repository.png" data-origin="content/images/backup-setup/git-local-collection-repository.png" alt="">
 
@@ -168,6 +178,21 @@ git push
 
 That's all ! Your collection is synchronized online, congratulations !
 
+#### Optional: Pin commit script to taskbar
+
+To make running sm-main-commit.bat more convenient, you can add it to taskbar. Windows doesn't let you add .bat files to taskbar so instead you can do the following:
+
+1. Right click on sm-main-commit.bat and click [create shortcut ![](/content/images/backup-setup/shortcut-creation.png)](/content/images/backup-setup/shortcut-creation.png '@tooltip-preview').
+
+2. The new shortcut still can't be added to taskbar. As such, right click properties and [go to shortcuts menu ![](/content/images/backup-setup/shortcut-edit.png)](/content/images/backup-setup/shortcut-edit.png '@tooltip-preview'). Add ```cmd /c``` (```cmd \c``` will not work) in front of [ the target script ![](/content/images/backup-setup/shortcut-target.png)](/content/images/backup-setup/shortcut-target.png '@tooltip-preview') and press apply:
+
+
+
+
+
+3. You can now [right click the shortcut ![](/content/images/backup-setup/shortcut-taskbar.png)](/content/images/backup-setup/shortcut-taskbar.png '@tooltip-preview') and add it to taskbar. Now, after every SuperMemo session you can click it (or use windkey+taskbar position number key) and be assured of the safety of your collection. 
+
+
 ## Suggestions to improve your backup strategy
 
 > Work in progress. Come back later !
@@ -175,6 +200,7 @@ That's all ! Your collection is synchronized online, congratulations !
 - [Encrypt your GitHub repository](https://github.com/AGWA/git-crypt).
 - Implement the [3-2-1 Backup Rule](https://www.acronyms-it.co.uk/blog/backup-rule-of-three/) ([Visual guide](https://github.com/alexis-/BitShelter/raw/master/Resources/X35Ndt4et3JGm9GU-GFTa6y6o4OSnUrVKyUh2y5s8_E.png)).
 - Make your SuperMemo partition a [Mirrored Volume (RAID 1)](https://www.windowscentral.com/how-set-mirrored-volume-file-redundancy-windows-10).
+- Use [symlinks](https://github.com/git-for-windows/git/wiki/Symbolic-Links) to backup plan and sleepchart data
 
 ## Testimonies
 
