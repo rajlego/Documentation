@@ -129,6 +129,7 @@ Don't panic! Restoring your collection to an earlier version is easy with BitShe
 - *(Bonus)* Synchronize our work between devices.
 
 \*: GitHub has a 1GB limit on free private repositories. [GitLab](https://about.gitlab.com) offers 10gb free storage by default and [BitBucket](http://bitbucket.org) offers a 5gb plan for 3$. 
+
 \*\*: *Although GitHub can be considered fairly reliable, we highly recommend that you implement a solution to encrypt your collection. This is, after all, a way to your innermost thoughts.*
 
 #### Installing & Setting up Git with GitHub
@@ -153,8 +154,6 @@ Don't panic! Restoring your collection to an earlier version is easy with BitShe
 
 ?> **In this example, the GitHub repository we create will be named SuperMemo-Collection**
 
-[recommended settings ![](/content/images/backup-setup/gitsetup-initialize.png)](/content/images/backup-setup/gitsetup-initialize.png '@tooltip-preview')
-
 1. Create a [new repository](https://github.com/new):
   - Give a name to your new repo (e.g. *SuperMemo-Collection*)
   - Select **Private**
@@ -176,7 +175,7 @@ Don't panic! Restoring your collection to an earlier version is easy with BitShe
 
 5. In the **command prompt**, type `git clone <https://github.com/......>`. Replace the text between **< >** with the link you copied from GitHub. 'git clone' will create a local copy of your github repository. 
 
-6. Login with your GitHub account to authenticate.
+6. A popup will appear. Login with your GitHub account to authenticate.
 
 <img src="/content/images/backup-setup/gitsetup-login.png" data-origin="content/images/backup-setup/gitsetup-login.png" alt="">
 
@@ -207,7 +206,7 @@ To make running sm-main-commit.bat more convenient, you can add it to taskbar. W
 
 1. Right click on sm-main-commit.bat and click [create shortcut ![](/content/images/backup-setup/shortcut-creation.png)](/content/images/backup-setup/shortcut-creation.png '@tooltip-preview').
 
-2. The new shortcut still can't be added to taskbar. As such, right click properties and [go to shortcuts menu ![](/content/images/backup-setup/shortcut-edit.png)](/content/images/backup-setup/shortcut-edit.png '@tooltip-preview'). Add ```cmd /c``` (```cmd \c``` will not work) in front of [ the target script ![](/content/images/backup-setup/shortcut-target.png)](/content/images/backup-setup/shortcut-target.png '@tooltip-preview') and press apply:
+2. The new shortcut still can't be added to taskbar. As such, right click properties and [go to shortcuts menu ![](/content/images/backup-setup/shortcut-edit.png)](/content/images/backup-setup/shortcut-edit.png '@tooltip-preview'). Add ```cmd /c``` (```cmd \c``` will not work) to the front of [ the target script ![](/content/images/backup-setup/shortcut-target.png)](/content/images/backup-setup/shortcut-target.png '@tooltip-preview') and press apply:
 
 3. You can now [right click the shortcut ![](/content/images/backup-setup/shortcut-taskbar.png)](/content/images/backup-setup/shortcut-taskbar.png '@tooltip-preview') and add it to taskbar. After you are done using SuperMemo, click the shortcut in taskbar (or use winkey + taskbar position number key) to sync changes to your collections's Github repository.
 
