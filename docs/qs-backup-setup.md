@@ -8,7 +8,7 @@ Do you care about your health ? Would you take a gamble with your life and forfe
 
 Computer glitches can happen at any time. It is precisely because we cannot anticipate them, that we take measures to mitigate their potential damage.
 
-?> *Still not convinced* ? [Read testimonies](#testimonies) of SuperMemo users who remained skeptic, until it was too late.
+?> [Read testimonies](#testimonies) of SuperMemo users who remained skeptic, until it was too late.
 
 #### Proposed strategy
 
